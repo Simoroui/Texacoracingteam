@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée - Texaco Racing Team Tunisia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Redirection vers la page d'accueil après 5 secondes
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 5000);
+    </script>
+    <style>
+        .error-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+        }
+        .error-logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+        .error-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #d00000;
+        }
+        .error-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .error-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #d00000;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            border: 2px solid #d00000;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .error-btn:hover {
+            background-color: transparent;
+            color: #d00000;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <img src="images/logo.jpg" alt="Texaco Racing Team Tunisia" class="error-logo">
+        <h1 class="error-title">404 - Page non trouvée</h1>
+        <p class="error-message">Désolé, la page que vous recherchez n'existe pas ou a été déplacée.</p>
+        <p class="error-message">Vous serez redirigé vers la page d'accueil dans 5 secondes...</p>
+        <a href="index.html" class="error-btn">Retour à l'accueil</a>
+    </div>
+</body>
+</html> 
