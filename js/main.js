@@ -13,6 +13,76 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollElements = document.querySelectorAll('[data-aos]');
     const backToTopBtn = document.querySelector('.back-to-top');
     const preloader = document.querySelector('.preloader');
+    const heroSection = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    
+    // ===== Effet Parallax sur hero avec la souris =====
+    if (heroSection && heroContent) {
+        heroSection.addEventListener('mousemove', function(e) {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            
+            heroContent.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            
+            // Effet de profondeur différent sur chaque élément
+            const heroElements = heroContent.querySelectorAll('*');
+            heroElements.forEach(element => {
+                if (element.classList.contains('hero-logo')) {
+                    element.style.transform = `translateZ(50px) translateX(${xAxis * 2}px) translateY(${yAxis * 2}px)`;
+                } else if (element.classList.contains('star-oil-container')) {
+                    element.style.transform = `translateZ(60px) translateX(${xAxis * 3}px) translateY(${yAxis * 3}px)`;
+                } else if (element.tagName === 'H1') {
+                    element.style.transform = `translateZ(30px) translateX(${xAxis * 1.5}px) translateY(${yAxis * 1.5}px)`;
+                } else if (element.tagName === 'P') {
+                    element.style.transform = `translateZ(20px) translateX(${xAxis}px) translateY(${yAxis}px)`;
+                } else if (element.classList.contains('btn')) {
+                    element.style.transform = `translateZ(40px) translateX(${xAxis * 2.5}px) translateY(${yAxis * 2.5}px)`;
+                }
+            });
+        });
+        
+        // Réinitialiser la transformation lorsque la souris quitte la section
+        heroSection.addEventListener('mouseleave', function() {
+            heroContent.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            
+            // Réinitialiser les transformations des éléments
+            const heroElements = heroContent.querySelectorAll('*');
+            heroElements.forEach(element => {
+                if (element.classList.contains('hero-logo')) {
+                    element.style.transform = 'translateZ(50px)';
+                } else if (element.classList.contains('star-oil-container')) {
+                    element.style.transform = 'translateZ(60px)';
+                } else if (element.tagName === 'H1') {
+                    element.style.transform = 'translateZ(30px)';
+                } else if (element.tagName === 'P') {
+                    element.style.transform = 'translateZ(20px)';
+                } else if (element.classList.contains('btn')) {
+                    element.style.transform = 'translateZ(40px)';
+                }
+            });
+        });
+        
+        // Transition en douceur en entrant dans la section
+        heroSection.addEventListener('mouseenter', function() {
+            heroContent.style.transition = 'none';
+            
+            // Désactiver les transitions des éléments
+            const heroElements = heroContent.querySelectorAll('*');
+            heroElements.forEach(element => {
+                element.style.transition = 'none';
+            });
+            
+            // Réactiver les transitions après un court délai
+            setTimeout(() => {
+                heroContent.style.transition = 'transform 0.5s ease';
+                
+                const heroElements = heroContent.querySelectorAll('*');
+                heroElements.forEach(element => {
+                    element.style.transition = 'transform 0.5s ease';
+                });
+            }, 100);
+        });
+    }
     
     // ===== Preloader =====
     if (preloader) {
