@@ -426,18 +426,55 @@ ul {
 /* ===== ABOUT SECTION ===== */
 .about-section {
     padding: 120px 0;
-    background-image: url('../img/about-bg.jpg');
     text-align: center;
+    position: relative;
+    color: white;
+}
+
+#passion.about-section {
+    background-image: url('../images/passion-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#passion.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .about-content p {
     margin-bottom: 30px;
     font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+#passion .section-title::after {
+    background: var(--primary-color);
+    margin: 15px auto 25px;
+}
+
+#passion .btn-outline {
+    border-color: white;
+    color: white;
+}
+
+#passion .btn-outline:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 /* ===== EVENTS SECTION ===== */
