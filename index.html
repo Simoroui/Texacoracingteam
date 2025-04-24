@@ -647,13 +647,12 @@
         <div class="circuit-lines"></div>
         <div class="checkered-flag"></div>
         <div class="container">
-            <h2 class="section-title">Notre Équipe</h2>
-            
-            <!-- Conteneur avec défilement automatique -->
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Notre équipe</h2>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <img src="images/logo.jpg" alt="Logo Texaco Racing Team" style="max-width: 346px; height: auto; display: inline-block;">
+            </div>
             <div class="team-slider-container" style="position: relative; overflow: hidden; width: 100%; margin: 0 auto;">
-                <!-- Conteneur d'éléments avec animation -->
                 <div class="team-slider" style="display: flex; animation: teamScroll 24s linear infinite;">
-                    <!-- Premier groupe de membres -->
                     <div class="team-slider-group" style="display: flex; gap: 30px; padding-right: 30px;">
                         <div class="team-member">
                             <div class="member-photo">
@@ -744,7 +743,6 @@
                         </div>
                     </div>
                     
-                    <!-- Deuxième groupe de membres (identique au premier) -->
                     <div class="team-slider-group" style="display: flex; gap: 30px; padding-right: 30px;">
                         <div class="team-member">
                             <div class="member-photo">
@@ -841,12 +839,12 @@
         <style>
             @keyframes teamScroll {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-50% - 30px)); } /* Ajustement pour tenir compte du padding */
+                100% { transform: translateX(calc(-50% - 30px)); }
             }
             
             .team-slider {
-                width: fit-content; /* Assure que le conteneur s'adapte au contenu */
-                will-change: transform; /* Optimisation pour les animations fluides */
+                width: fit-content;
+                will-change: transform;
             }
             
             .team-slider:hover {
@@ -953,20 +951,15 @@
     <section id="partenaires" class="partners-section" style="position: relative; overflow: hidden; background-color: #0a0a0a; color: white;">
         <div class="sponsors-racing-flag" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, #000000 0px, #000000 10px, #e42021 10px, #e42021 20px); opacity: 0.05; z-index: 0;"></div>
         
-        <!-- Effet lumineux en mouvement -->
         <div style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(228, 32, 33, 0.2), transparent); z-index: 1; animation: raceLight 5s infinite linear;"></div>
         
-        <!-- Motif ondulé -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'800\' viewBox=\'0 0 800 800\'%3E%3Cpath d=\'M0,200 Q200,100,400,200 T800,200 L800,500 Q600,400,400,500 T0,500 L0,200\' fill=\'none\' stroke=\'%23e42021\' stroke-width=\'1\' /%3E%3C/svg%3E'); background-size: 150% 300px; background-repeat: repeat-y; background-position: center; opacity: 0.1; z-index: 1; animation: waveMove 15s infinite alternate ease-in-out;"></div>
         
         <div class="container" style="position: relative; z-index: 2;">
             <h2 class="section-title" style="color: white;">Nos Partenaires</h2>
             
-            <!-- Conteneur principal avec overflow hidden pour cacher ce qui dépasse -->
             <div class="partners-container" style="position: relative; overflow: hidden; width: 100%; padding: 20px 0;">
-                <!-- Conteneur de défilement avec animation -->
                 <div class="partners-scroll" style="display: flex; animation: scrollLogos 12s linear infinite;">
-                    <!-- Premier groupe de logos -->
                     <div class="partners-group" style="display: flex; gap: 30px; margin-right: 60px;">
                         <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; width: 180px; height: 120px;">
                             <img src="images/sponsor starOil.png" alt="Logo Star Oil" style="width: 144px; height: auto; max-height: 90px; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
@@ -994,7 +987,6 @@
                         </div>
                     </div>
                     
-                    <!-- Copie du groupe de logos pour créer l'effet de défilement infini -->
                     <div class="partners-group" style="display: flex; gap: 30px;">
                         <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px; flex: 0 0 auto; display: flex; justify-content: center; align-items: center; width: 180px; height: 120px;">
                             <img src="images/sponsor starOil.png" alt="Logo Star Oil" style="width: 144px; height: auto; max-height: 90px; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
@@ -1052,7 +1044,6 @@
                 filter: brightness(1.2) contrast(1.2);
             }
             
-            /* La partners-scroll contient les deux groupes de logos et défile */
             #partenaires .partners-scroll:hover {
                 animation-play-state: paused;
             }
