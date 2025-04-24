@@ -1,0 +1,98 @@
+/* Style pour la section des partenaires */
+#partenaires {
+    background-color: #ffffff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section {
+    text-align: center;
+    position: relative;
+}
+
+.sponsors-racing-flag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='1440' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0,400 C 180,360 360,320 720,400 C 1080,480 1260,440 1440,400 L 1440,800 L 0,800 Z' fill='%23f9f9f9' /%3E%3C/svg%3E");
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.partners-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.partners-section h2 {
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 700;
+}
+
+.partners-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: #e42021;
+}
+
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-item {
+    padding: 15px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.partner-item img {
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .partners-grid {
+        gap: 40px;
+    }
+    
+    .partners-section h2 {
+        font-size: 28px;
+    }
+    
+    .partner-item img {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-grid {
+        gap: 30px;
+    }
+    
+    .partner-item img {
+        max-width: 100px;
+    }
+} 

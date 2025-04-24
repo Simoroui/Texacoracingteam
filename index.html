@@ -6,6 +6,7 @@
     <title>Texaco Racing Team Tunisia</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/team-style.css">
+    <link rel="stylesheet" href="css/partners-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -244,53 +245,62 @@
         </div>
     </section>
 
-    <!-- Sponsors Section -->
-    <section class="sponsors-section">
-        <div class="sponsors-racing-flag"></div>
-        <div class="container">
-            <h2 class="section-title">Nos Partenaires</h2>
-            <div class="sponsors-carousel">
-                <div class="sponsor">
-                    <img src="images/sponsor texaco.jpg" alt="Texaco">
-                </div>
-                <div class="sponsor">
-                    <img src="images/sponsor starOil.png" alt="Star Oil">
-                </div>
-                <div class="sponsor">
-                    <img src="images/sponsor minister.png" alt="Ministère">
-                </div>
-                <div class="sponsor">
-                    <img src="images/sponsor fta.png" alt="FTA">
-                </div>
-                <div class="sponsor">
-                    <img src="images/sponsor bmc.png" alt="BMC">
-                </div>
-                <div class="sponsor">
-                    <img src="images/sponsor at.png" alt="AT">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Nos Partenaires Section -->
-    <section id="partenaires" class="partners-section">
-        <div class="container">
-            <h2 class="section-title">Nos Partenaires</h2>
-            <div class="partners-grid">
-                <div class="partner">
-                    <img src="images/sponsor starOil.png" alt="Star Oil - Partenaire Texaco Racing Team">
+    <section id="partenaires" class="partners-section" style="position: relative; overflow: hidden; background-color: #0a0a0a; color: white;">
+        <div class="sponsors-racing-flag" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, #000000 0px, #000000 10px, #e42021 10px, #e42021 20px); opacity: 0.05; z-index: 0;"></div>
+        
+        <!-- Effet lumineux en mouvement -->
+        <div style="position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(228, 32, 33, 0.2), transparent); z-index: 1; animation: raceLight 5s infinite linear;"></div>
+        
+        <!-- Motif ondulé -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'800\' viewBox=\'0 0 800 800\'%3E%3Cpath d=\'M0,200 Q200,100,400,200 T800,200 L800,500 Q600,400,400,500 T0,500 L0,200\' fill=\'none\' stroke=\'%23e42021\' stroke-width=\'1\' /%3E%3C/svg%3E'); background-size: 150% 300px; background-repeat: repeat-y; background-position: center; opacity: 0.1; z-index: 1; animation: waveMove 15s infinite alternate ease-in-out;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 class="section-title" style="color: white;">Nos Partenaires</h2>
+            <div class="partners-grid" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto;">
+                <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                    <img src="images/sponsor starOil.png" alt="Logo Star Oil" style="max-width: 150px; height: auto; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
                 </div>
-                <div class="partner">
-                    <img src="images/sponsor minister.png" alt="Minister - Partenaire Texaco Racing Team">
+                <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                    <img src="images/sponsor minister.png" alt="Logo Minister" style="max-width: 150px; height: auto; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
                 </div>
-                <div class="partner">
-                    <img src="images/sponsor fta.png" alt="FTA - Partenaire Texaco Racing Team">
+                <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                    <img src="images/sponsor fta.png" alt="Logo FTA" style="max-width: 150px; height: auto; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
                 </div>
-                <div class="partner">
-                    <img src="images/sponsor texaco.jpg" alt="Texaco - Partenaire principal Texaco Racing Team">
+                <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                    <img src="images/sponsor texaco.jpg" alt="Logo Texaco" style="max-width: 150px; height: auto; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
+                </div>
+                <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                    <img src="images/sponsor bmc.png" alt="Logo BMC" style="max-width: 150px; height: auto; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
+                </div>
+                <div class="partner-item" style="padding: 15px; transition: all 0.3s ease; position: relative; z-index: 2; background-color: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                    <img src="images/sponsor at.png" alt="Logo AT" style="max-width: 150px; height: auto; object-fit: contain; filter: brightness(1.1) contrast(1.1);">
                 </div>
             </div>
         </div>
+        
+        <style>
+            @keyframes raceLight {
+                0% { left: -100%; }
+                100% { left: 100%; }
+            }
+            
+            @keyframes waveMove {
+                0% { background-position: 0% 10%; }
+                50% { background-position: 100% 90%; }
+                100% { background-position: 0% 10%; }
+            }
+            
+            #partenaires .partner-item:hover {
+                transform: translateY(-5px);
+                background-color: rgba(228, 32, 33, 0.1);
+                box-shadow: 0 5px 15px rgba(228, 32, 33, 0.3);
+            }
+            
+            #partenaires .partner-item:hover img {
+                filter: brightness(1.2) contrast(1.2);
+            }
+        </style>
     </section>
 
     <!-- Contact Section -->
