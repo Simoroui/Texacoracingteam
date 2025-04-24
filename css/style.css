@@ -550,14 +550,147 @@ ul {
 
 /* ===== TEAM SECTION ===== */
 .team-section {
-    padding: 100px 0;
-    background-color: var(--bg-light);
+    padding: 60px 0;
+    background-color: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.team-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(150, 0, 0, 0.4) 50%, rgba(10, 10, 10, 0.9) 100%);
+    z-index: 1;
+}
+
+.team-section .container {
+    position: relative;
+    z-index: 5;
+}
+
+/* Gear Animations */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.3; }
+}
+
+.gear {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cmask id='holeMask'%3E%3Crect width='120' height='120' fill='white'/%3E%3Ccircle cx='60' cy='60' r='25' fill='black'/%3E%3C/mask%3E%3C/defs%3E%3Cpath fill='%23d00000' d='M60,10c-2.5,0-4.5,2-4.5,4.5v6.4c-5.3,0.8-10.3,2.6-14.6,5.3l-4.5-4.5c-1.8-1.8-4.7-1.8-6.4,0c-1.8,1.8-1.8,4.7,0,6.4l4.5,4.5c-2.7,4.3-4.5,9.3-5.3,14.6H16c-2.5,0-4.5,2-4.5,4.5S13.5,56,16,56h13.2c0.8,5.3,2.6,10.3,5.3,14.6l-9.9,9.9c-1.8,1.8-1.8,4.7,0,6.4c1.8,1.8,4.7,1.8,6.4,0l9.9-9.9c4.3,2.7,9.3,4.5,14.6,5.3v13.2c0,2.5,2,4.5,4.5,4.5s4.5-2,4.5-4.5V82.3c5.3-0.8,10.3-2.6,14.6-5.3l9.9,9.9c1.8,1.8,4.7,1.8,6.4,0c1.8-1.8,1.8-4.7,0-6.4l-9.9-9.9c2.7-4.3,4.5-9.3,5.3-14.6h13.2c2.5,0,4.5-2,4.5-4.5s-2-4.5-4.5-4.5H91.8c-0.8-5.3-2.6-10.3-5.3-14.6l4.5-4.5c1.8-1.8,1.8-4.7,0-6.4c-1.8-1.8-4.7-1.8-6.4,0l-4.5,4.5c-4.3-2.7-9.3-4.5-14.6-5.3v-6.4C64.5,12,62.5,10,60,10z' mask='url(%23holeMask)'/%3E%3Ccircle cx='60' cy='60' r='25' fill='%23000000'/%3E%3C/svg%3E");
+    z-index: 2;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 5px rgba(208,0,0,0.6));
+}
+
+.gear-1 {
+    width: 180px;
+    height: 180px;
+    top: 5%;
+    left: 5%;
+    animation: rotate 40s linear infinite;
+}
+
+.gear-2 {
+    width: 120px;
+    height: 120px;
+    bottom: 10%;
+    right: 8%;
+    animation: rotate-reverse 30s linear infinite;
+}
+
+.gear-3 {
+    width: 150px;
+    height: 150px;
+    top: 55%;
+    left: 12%;
+    animation: rotate 35s linear infinite;
+}
+
+/* Ajouter des engrenages supplémentaires pour plus d'effet mécanique */
+.gear-4 {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    right: 10%;
+    animation: rotate-reverse 25s linear infinite;
+}
+
+.gear-5 {
+    width: 70px;
+    height: 70px;
+    bottom: 30%;
+    left: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+/* Gardons les animations pour le grid, mais supprimons la référence à pulse */
+@keyframes grid-pulse {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+.circuit-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23d00000' stroke-width='0.3' d='M0,0 L20,0 L20,20 L0,20 Z'/%3E%3C/svg%3E");
+    opacity: 0.2;
+    z-index: 2;
+    background-size: 20px 20px;
+    filter: blur(0.5px);
+    animation: grid-pulse 8s ease-in-out infinite;
+}
+
+/* Effet drapeau à damier */
+.team-section .checkered-flag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    background-image: linear-gradient(45deg, #000 25%, transparent 25%),
+                     linear-gradient(-45deg, #000 25%, transparent 25%),
+                     linear-gradient(45deg, transparent 75%, #000 75%),
+                     linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    opacity: 0.15;
+    z-index: 3;
 }
 
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
+    margin-top: 40px;
 }
 
 .team-member {
@@ -599,6 +732,32 @@ ul {
     text-align: center;
     color: var(--primary-color);
     font-weight: 500;
+}
+
+/* Nouvelle définition pour l'élément ::after qui crée le circuit de course */
+.team-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cdefs%3E%3Cstyle%3E.track %7B fill: none; stroke: %23d00000; stroke-width: 2; opacity: 0.3; %7D%3C/style%3E%3C/defs%3E%3Cpath class='track' d='M50,50 L350,50 C380,50 380,200 350,200 L50,200 C20,200 20,350 50,350 L350,350'/%3E%3Cpath class='track' d='M20,100 L300,100 C320,100 320,250 300,250 L20,250'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000000' opacity='0.05'/%3E%3C/svg%3E");
+    background-size: 400px, 10px;
+    opacity: 1;
+    z-index: 1;
+    animation: racingTrack 20s linear infinite;
+}
+
+@keyframes racingTrack {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        background-position: 1000px 0, 50px 50px;
+    }
 }
 
 /* ===== GALLERY SECTION ===== */
@@ -725,59 +884,6 @@ ul {
     100% {
         background-position: 40px 40px, 1000px 1000px;
     }
-}
-
-.sponsors-section .container {
-    position: relative;
-    z-index: 3;
-}
-
-.sponsors-section .section-title::after {
-    background-color: var(--primary-color);
-}
-
-.sponsors-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    overflow-x: auto;
-    padding: 20px 0;
-    position: relative;
-}
-
-.sponsors-carousel::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(208, 0, 0, 0.5), rgba(255, 255, 255, 0.3), rgba(208, 0, 0, 0.5), transparent);
-    transform: translateY(-50%);
-    z-index: -1;
-}
-
-.sponsor {
-    padding: 15px;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: var(--transition);
-    max-width: 150px;
-    min-width: 100px;
-    flex-shrink: 0;
-}
-
-.sponsor:hover {
-    filter: grayscale(0);
-    opacity: 1;
-}
-
-.sponsor img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 80px;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -1223,4 +1329,59 @@ ul {
 .back-to-top:hover {
     background-color: var(--secondary-color);
     transform: translateY(-5px);
+}
+
+/* Partners Section */
+.partners-section {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.partner {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.partner img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.partner:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
 } 
