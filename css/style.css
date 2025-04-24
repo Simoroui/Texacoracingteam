@@ -129,12 +129,25 @@ ul {
 
 .logo-container {
     padding-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo {
     height: 40px;
     width: auto;
     border-radius: 3px;
+}
+
+.sponsor-logo {
+    height: 35px;
+    width: auto;
+    transition: var(--transition);
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.05);
 }
 
 .main-nav ul {
@@ -1120,6 +1133,20 @@ ul {
     
     .main-nav li {
         margin: 15px 0;
+    }
+    
+    .logo-container {
+        padding-left: 15px;
+        max-width: 70%;
+        overflow: hidden;
+    }
+    
+    .logo {
+        height: 35px;
+    }
+    
+    .sponsor-logo {
+        height: 30px;
     }
     
     .hero h1 {
